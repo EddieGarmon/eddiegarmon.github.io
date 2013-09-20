@@ -27,10 +27,41 @@
     <!-- MAIN CONTENT -->
     <div id="main_content_wrap" class="outer">
       <section id="main_content" class="inner">
-        <h3>
-<a name="welcome-to-my-pages" class="anchor" href="#welcome-to-my-pages"><span class="octicon octicon-link"></span></a>Welcome to <code>MY</code> Pages.</h3>
+        <h2>
+<a name="welcome-to-my-pages" class="anchor" href="#welcome-to-my-pages"><span class="octicon octicon-link"></span></a>Welcome to <code>MY</code> Pages.</h2>
 
-<p>I will have real content here soon.</p>
+<h3>
+<a name="graduated-cylinder-updates" class="anchor" href="#graduated-cylinder-updates"><span class="octicon octicon-link"></span></a>Graduated Cylinder Updates</h3>
+
+<p>I hope to get a build of <a href="https://github.com/EddieGarmon/GraduatedCylinder">GraduatedCylinder</a>, a measurements library for .NET on nuget soon.</p>
+
+<h3>
+<a name="simpleweb-updates" class="anchor" href="#simpleweb-updates"><span class="octicon octicon-link"></span></a>Simple.Web Updates</h3>
+
+<p>I recently started using <a href="https://github.com/markrendle/Simple.Web">Simple.Web</a> and became enamoured. One issue that conflicted me was that I used my own explicit serialization code, no auto generation for me. This meant that I needed to create my own MediaTypeHandler. With the help of <a href="@markrendle">Mark Rendle</a> and <a href="@ianbattersby">Ian Battersby</a>, I was able to create my own, and at the same time contribute several minor infrastructure changes back that were just released in 0.10.0.</p>
+
+<ul>
+<li>The <code>IMediaTypeHandler</code> interface is now 100% async compatible</li>
+<li>The <code>IMediaTypeHandler</code> interface now uses generic type parameters for <code>Read</code> and <code>Write</code>
+</li>
+<li>There is a new <code>MediaTypeHandlerBase&lt;TWireFormat&gt;</code> that supports codec style two phase serialization. This is used by:
+
+<ul>
+<li>The new <code>Simple.Web.Xml.ExplicitXmlMediaTypeHandler</code>
+</li>
+<li>The renamed <code>Simple.Web.Xml.DataContractXmlMediaTypeHandler</code> that was <code>XmlMediaTypeHandler</code>
+</li>
+<li>The new <code>Simple.Web.JsonNet.JsonMediaTypeHandler</code>
+</li>
+<li>The <code>Simple.Web.JsonNet.HalJsonMediaTypeHandler</code>
+</li>
+</ul>
+</li>
+</ul><p>The renamed <code>Simple.Web.JsonNet.JsonMediaTypeHandlerWithDeepLinks</code> that was <code>JsonMediaTypeHandler</code>, has not been modified for this release.</p>
+
+<p>A bunch of the test infrastructure for the media type handling was also aggregated and condensed.</p>
+
+<p>Thanks for the great framework guys, hope to contribute more in the future.</p>
       </section>
     </div>
 
